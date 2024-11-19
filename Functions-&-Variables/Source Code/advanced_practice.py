@@ -139,6 +139,26 @@ else:
 # Use this function to apply `square` (a function you define to return the square of a number)
 # to each number in a list provided by the user (comma-separated).
 # Display the resulting list.
+# Function to square a number
+def square(n):
+    return n ** 2
+
+# Higher-order function to apply any function (like square) to each element of a list
+def apply_to_each(lst, func):
+    return [func(x) for x in lst]
+
+# Input from the user, assuming comma-separated numbers
+numbers_input = input("Enter numbers separated by commas: ")
+
+# Convert the input string to a list of numbers
+numbers = [int(num.strip()) for num in numbers_input.split(",")]
+
+# Apply the square function to each number in the list
+squared_numbers = apply_to_each(numbers, square)
+
+# Output the result
+print(squared_numbers)
+
 
 # -------------------------------
 # 7. Check for Palindrome
